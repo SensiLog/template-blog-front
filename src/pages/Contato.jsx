@@ -14,16 +14,16 @@ function Contato() {
                     <h1 className='text-4xl md:text-6xl font-bold'>Fale comigo!</h1>
                     <p className='text-sm md:text-base text-center'>Você tem alguma reclamação, sugestão ou precisa de algum suporte? Entre em contato nas redes sociais!</p>
                     <div className='flex flex-col space-y-4 w-full mt-4 items-center'>
-                        <a href='https://www.facebook.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-900 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
+                        <a href='https://www.facebook.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-800 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
                             <i class="fa-brands fa-facebook" /> Facebook
                         </a>
-                        <a href='https://www.instagram.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-900 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
+                        <a href='https://www.instagram.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-800 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
                             <i class="fa-brands fa-instagram" /> Instagram
                         </a>
-                        <a href='https://www.twitter.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-900 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
+                        <a href='https://www.twitter.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-800 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
                             <i class="fa-brands fa-x-twitter" /> Twitter
                         </a>
-                        <a href='https://www.linkedin.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-900 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
+                        <a href='https://www.linkedin.com' className='hover:bg-slate-700 w-full transition-colors bg-slate-800 text-white text-center rounded py-2' target='_blank' rel='noreferrer'>
                             <i class="fa-brands fa-linkedin" /> LinkedIn
                         </a>
                     </div>

@@ -1,32 +1,30 @@
-import { useState } from 'react'
+import React from 'react'
 import Header from '../components/Header'
-import Lei from '../components/Lei'
 import Footer from '../components/Footer'
+import Lei from '../components/Lei'
 
-function LeisSancionadas() {
-  const [counter, setCounter] = useState(13)
-
+function ProjetosDeLei() {
   const data = [
     {
-      id: 1,
-      lei: 'Lei 1',
-      ementa: 'Ementa da Lei 1',
-      conteudo: 'Conteúdo da Lei 1',
-      status: 'sancionada'
+      id: 4,
+      lei: 'Lei 4',
+      ementa: 'Ementa da Lei 4',
+      conteudo: 'Conteúdo da Lei 4',
+      status: 'projeto'
     },
     {
-      id: 2,
-      lei: 'Lei 2',
-      ementa: 'Ementa da Lei 2',
-      conteudo: 'Conteúdo da Lei 2',
-      status: 'sancionada'
+      id: 5,
+      lei: 'Lei 5',
+      ementa: 'Ementa da Lei 5',
+      conteudo: 'Conteúdo da Lei 5',
+      status: 'projeto'
     },
     {
-      id: 3,
-      lei: 'Lei 3',
-      ementa: 'Ementa da Lei 3',
-      conteudo: 'Conteúdo da Lei 3',
-      status: 'sancionada'
+      id: 6,
+      lei: 'Lei 6',
+      ementa: 'Ementa da Lei 6',
+      conteudo: 'Conteúdo da Lei 6',
+      status: 'projeto'
     }
   ]
 
@@ -34,7 +32,7 @@ function LeisSancionadas() {
     <div className='flex items-center justify-center flex-col'>
       <Header />
       <div className='bg-slate-800 h-[20vh] md:h-[30vh] flex items-center justify-center'>
-        <h1 className='font-bold text-3xl md:text-5xl text-white w-screen text-center'>{counter} LEIS SANCIONADAS</h1>
+        <h1 className='font-bold text-3xl md:text-5xl text-white w-screen text-center'>PROJETOS DE LEI</h1>
       </div>
       <div className='flex flex-col justify-center items-center w-screen p-8 md:p-12 bg-slate-100'>
         <div className='w-full 2xl:w-[1500px] lg:px-32 md:px-12'>
@@ -55,4 +53,4 @@ function LeisSancionadas() {
   )
 }
 
-export default LeisSancionadas
+export default ProjetosDeLei

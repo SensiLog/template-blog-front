@@ -1,9 +1,11 @@
+import { Routes, Route } from "react-router-dom"
 import Biografia from './pages/Biografia'
 import Blog from './pages/Blog'
 import Contato from './pages/Contato'
 import Home from './pages/Home'
-import { Routes, Route } from "react-router-dom"
 import LeisSancionadas from './pages/LeisSancionadas'
+import ConteudoLei from './pages/ConteudoLei'
+import ProjetosDeLei from './pages/ProjetosDeLei'
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
         <Route path='/noticias' element={<Blog />} />
         <Route path='/biografia' element={<Biografia />} />
         <Route path='/contato' element={<Contato />} />
-        <Route path='/leis' element={<LeisSancionadas />} />
+        <Route path='/lei/sancionadas' element={<LeisSancionadas />} />
+        <Route path='/lei/projetos' element={<ProjetosDeLei />} />
+        <Route path='/lei/:id' element={<ConteudoLei />} />
       </Routes>
     </>
   )
