@@ -3,6 +3,7 @@ import { NavLink } from "react-router";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [showSubmenu, setShowSubmenu] = useState(false);
 
     return (
         <div className="bg-slate-900 p-5 flex justify-between lg:justify-evenly md:justify-around items-center w-full">
@@ -26,7 +27,7 @@ function Header() {
                     <NavLink
                         to='/leis'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >PROJETOS</NavLink>
+                    >MANDATO</NavLink>
                     <NavLink
                         to='/noticias'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
@@ -49,10 +50,20 @@ function Header() {
                         to='/biografia'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
                     >BIOGRAFIA</NavLink>
-                    <NavLink
-                        to='/leis'
-                        className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >PROJETOS</NavLink>
+                    <div
+                        className='cursor-pointer hover:text-slate-300 transition-colors relative'
+                        onMouseEnter={() => setShowSubmenu(true)}
+                        onMouseLeave={() => setShowSubmenu(false)}
+                    ><i class="fa-solid fa-chevron-down" /> MANDATO
+                        <div
+                            className={`absolute left-0 top-full bg-slate-700 w-40 mt-2 shadow-lg rounded z-10 overflow-hidden transition-all duration-500 ease-out ${showSubmenu ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}
+                        >
+                            <ul className='flex flex-col p-2'>
+                                <NavLink to='/lei/projetos' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">Projeto de Lei</NavLink>
+                                <NavLink to='/lei/sancionadas' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">Lei Sancionada</NavLink>
+                            </ul>
+                        </div>
+                    </div>
                     <NavLink
                         to='/noticias'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
