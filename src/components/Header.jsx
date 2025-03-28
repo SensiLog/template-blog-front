@@ -19,23 +19,54 @@ function Header() {
                     <NavLink
                         to='/'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >INÍCIO</NavLink>
+                    >
+                        INÍCIO
+                    </NavLink>
                     <NavLink
                         to='/biografia'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >BIOGRAFIA</NavLink>
-                    <NavLink
-                        to='/leis'
-                        className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >MANDATO</NavLink>
+                    >
+                        BIOGRAFIA
+                    </NavLink>
+
+                    <div>
+                        <button
+                            onClick={() => setShowSubmenu(!showSubmenu)}
+                            className='cursor-pointer hover:text-slate-300 transition-colors w-full text-left'
+                        >
+                            <i class="fa-solid fa-chevron-down" /> MANDATO
+                        </button>
+
+                        <div className={`overflow-hidden transition-all duration-300 ${showSubmenu ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}>
+                            <ul className="pl-4 mt-2 border-l flex flex-col items-start border-slate-700">
+                                <NavLink
+                                    to='/lei/sancionadas'
+                                    className='cursor-pointer hover:text-slate-300 transition-colors'
+                                >
+                                    LEIS SANCIONADAS
+                                </NavLink>
+                                <NavLink
+                                    to='/lei/projetos'
+                                    className='cursor-pointer hover:text-slate-300 transition-colors'
+                                >
+                                    PROJETOS DE LEI
+                                </NavLink>
+                            </ul>
+                        </div>
+                    </div>
+
                     <NavLink
                         to='/noticias'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >NOTÍCIAS</NavLink>
+                    >
+                        NOTÍCIAS
+                    </NavLink>
                     <NavLink
                         to='/contato'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >CONTATO</NavLink>
+                    >
+                        CONTATO
+                    </NavLink>
                 </ul>
             </div>
 
@@ -45,33 +76,41 @@ function Header() {
                     <NavLink
                         to='/'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >INÍCIO</NavLink>
+                    >
+                        INÍCIO
+                    </NavLink>
                     <NavLink
                         to='/biografia'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >BIOGRAFIA</NavLink>
+                    >
+                        BIOGRAFIA
+                    </NavLink>
                     <div
                         className='cursor-pointer hover:text-slate-300 transition-colors relative'
                         onMouseEnter={() => setShowSubmenu(true)}
                         onMouseLeave={() => setShowSubmenu(false)}
-                    ><i class="fa-solid fa-chevron-down" /> MANDATO
+                    >
+                        <i class="fa-solid fa-chevron-down" /> MANDATO
                         <div
-                            className={`absolute left-0 top-full bg-slate-700 w-40 mt-2 shadow-lg rounded z-10 overflow-hidden transition-all duration-500 ease-out ${showSubmenu ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}
-                        >
+                            className={`absolute left-0 top-full bg-slate-700 w-40 mt-2 shadow-lg rounded z-10 overflow-hidden transition-all duration-500 ease-out ${showSubmenu ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`}>
                             <ul className='flex flex-col p-2'>
-                                <NavLink to='/lei/projetos' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">Projeto de Lei</NavLink>
-                                <NavLink to='/lei/sancionadas' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">Lei Sancionada</NavLink>
+                                <NavLink to='/lei/sancionadas' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">LEIS SANCIONADAS</NavLink>
+                                <NavLink to='/lei/projetos' className="p-2 hover:bg-slate-800 transition-colors cursor-pointer">PROJETOS DE LEI</NavLink>
                             </ul>
                         </div>
                     </div>
                     <NavLink
                         to='/noticias'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >NOTÍCIAS</NavLink>
+                    >
+                        NOTÍCIAS
+                    </NavLink>
                     <NavLink
                         to='/contato'
                         className='cursor-pointer hover:text-slate-300 transition-colors'
-                    >CONTATO</NavLink>
+                    >
+                        CONTATO
+                    </NavLink>
                 </ul>
             </nav>
         </div>
