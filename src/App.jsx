@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import LeisSancionadas from './pages/LeisSancionadas'
 import ConteudoLei from './pages/ConteudoLei'
 import ProjetosDeLei from './pages/ProjetosDeLei'
+import Noticia from "./pages/Noticia"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/noticias' element={<Blog />} />
+        <Route path='/noticia/:id' element={<Noticia />} />
         <Route path='/biografia' element={<Biografia />} />
         <Route path='/contato' element={<Contato />} />
         <Route path='/lei/sancionadas' element={<LeisSancionadas />} />

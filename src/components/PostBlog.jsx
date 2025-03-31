@@ -1,8 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function PostBlog(props) {
   return (
-    <div className='w-full bg-white p-5 my-5 rounded shadow-xl flex-col md:flex-row md:flex items-start'>
+    <NavLink to={`/noticia/${props.id}`} className='w-full'>
+      <div className='w-full bg-white p-5 my-5 rounded shadow-xl flex-col md:flex-row md:flex items-start'>
       <div className='lg:w-1/3 md:w-2/4 w-full h-60 p-4'>
         <img
           className="w-full h-full object-cover"
@@ -16,6 +18,7 @@ function PostBlog(props) {
         <p className='text-slate-700 truncate-custom text-sm md:text-base'>{props.desc}</p>
       </div>
     </div>
+    </NavLink>
   )
 }
 

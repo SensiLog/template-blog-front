@@ -7,7 +7,9 @@ function Header() {
 
     return (
         <div className="bg-slate-900 p-5 flex justify-between lg:justify-evenly md:justify-around items-center w-full">
-            <h1 className="text-white text-2xl md:text-4xl font-bold">VEREADOR</h1>
+            <NavLink to='/'>
+                <h1 className="text-white text-2xl md:text-4xl font-bold">VEREADOR</h1>
+            </NavLink>
             <div className="lg:hidden">
                 <button onClick={() => setIsOpen(!isOpen)} className="text-white text-3xl">☰</button>
             </div>

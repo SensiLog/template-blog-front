@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Bio() {
     return (
@@ -11,7 +12,9 @@ function Bio() {
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptatum cumque culpa inventore alias ipsam? Nostrum exercitationem, tempore eligendi, repellat fuga a, necessitatibus atque doloribus eaque quisquam obcaecati laborum? Labore optio modi excepturi veritatis quisquam fugit voluptatum illum soluta aspernatur doloribus! Praesentium aliquam adipisci harum ducimus, provident beatae reprehenderit ex.
                 </p>
-                <button className='bg-slate-900 text-white font-bold md:text-lg px-4 py-2 rounded cursor-pointer transition-colors hover:bg-slate-500'>BIOGRAFIA COMPLETA</button>
+                <NavLink to='/biografia'>
+                    <button className='bg-slate-900 text-white font-bold md:text-lg px-4 py-2 rounded cursor-pointer transition-colors hover:bg-slate-500'>BIOGRAFIA COMPLETA</button>
+                </NavLink>
             </section>
             <section className='hidden w-2/5 lg:flex items-center justify-center h-[40vh] bg-slate-200'>
                 box

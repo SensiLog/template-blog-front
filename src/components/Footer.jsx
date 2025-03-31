@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router";
 
 function Footer() {
     return (
@@ -7,11 +8,12 @@ function Footer() {
                 <div className='md:w-1/5'>
                     <h1 className='md:text-4xl text-2xl font-semibold border-b-2 border-b-slate-500 mb-4'>Links</h1>
                     <ul className='md:text-sm text-xs space-y-1 cursor-pointer'>
-                        <li>Início</li>
-                        <li>Biografia</li>
-                        <li>Projetos</li>
-                        <li>Notícias</li>
-                        <li>Contato</li>
+                        <NavLink to='/'><li>Início</li></NavLink>
+                        <NavLink to='/biografia'><li>Biografia</li></NavLink>
+                        <NavLink to='/lei/sancionadas'><li>Leis sancionadas</li></NavLink>
+                        <NavLink to='/lei/projetos'><li>Projetos de lei</li></NavLink>
+                        <NavLink to='/noticias'><li>Notícias</li></NavLink>
+                        <NavLink to='/contato'><li>Contato</li></NavLink>
                     </ul>
                 </div>
                 <div className='md:w-1/5'>
