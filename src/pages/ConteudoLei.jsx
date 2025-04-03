@@ -5,18 +5,18 @@ import DocLei from '../components/DocLei'
 
 function ConteudoLei() {
     const textoExemplo = `
-  Art. 1º Fica garantido aos corretores de imóveis e advogados,
-  no exercício da profissão, atendimento prioritário nas repartições
-  públicas do Município e nas empresas concessionárias de serviços públicos
-  sob a jurisdição municipal.
+        Art. 1º Fica garantido aos corretores de imóveis e advogados,
+        no exercício da profissão, atendimento prioritário nas repartições
+        públicas do Município e nas empresas concessionárias de serviços públicos
+        sob a jurisdição municipal.
 
-  § 1º São considerados corretores de imóveis aqueles legalmente habilitados
-  que realizaram o curso Técnico em Transações Imobiliárias (TTI – nível técnico)
-  ou o curso superior em negócios imobiliários e que se encontram regularmente
-  inscritos no Conselho Regional de Corretores de Imóveis da 1ª Região/RJ – CRECI/RJ.
+        § 1º São considerados corretores de imóveis aqueles legalmente habilitados
+        que realizaram o curso Técnico em Transações Imobiliárias (TTI – nível técnico)
+        ou o curso superior em negócios imobiliários e que se encontram regularmente
+        inscritos no Conselho Regional de Corretores de Imóveis da 1ª Região/RJ – CRECI/RJ.
 
-  § 2º São considerados advogados aqueles legalmente habilitados e devidamente
-  inscritos na Ordem dos Advogados do Brasil – OAB/RJ.
+        § 2º São considerados advogados aqueles legalmente habilitados e devidamente
+        inscritos na Ordem dos Advogados do Brasil – OAB/RJ.
   `;
   
     return (
