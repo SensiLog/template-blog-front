@@ -1,39 +1,38 @@
-import React from 'react'
-import PostBlogHome from './PostBlog'
+import PostBlog from './PostBlog'
+import instance from '../hooks/instance.js'
 import { NavLink } from 'react-router-dom'
+import { formatDate } from '../hooks/utils.js'
+import { useEffect, useState } from 'react'
 
 function BlogHome() {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null);
 
-  const data = [
-    {
-      id: 1,
-      urlImage: 'https://wallpapers.com/images/featured/imagens-muito-legais-40it5k0y58kfe71d.jpg',
-      title: 'Lorem ipsum dolor sit amet consectetur.',
-      date: '12/12/2021',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugit explicabo voluptate nesciunt dolorem, voluptatibus eveniet quod quaerat harum necessitatibus voluptatum fuga atque, suscipit asperiores ipsam, eligendi aspernatur quos? Perferendis obcaecati incidunt voluptatibus voluptas dignissimos laboriosam, debitis quaerat in ad iste optio, eum repellat. Iure nobis provident sit eius iusto.'
-    },
-    {
-      id: 2,
-      urlImage: 'https://www.mercadoeeventos.com.br/wp-content/uploads/2022/10/Embratur-Brasil-ultrapassa-marca-de-1-milhao-de-turistas-estrangeiros-recebidos-pela-primeira-vez-desde-2020.png',
-      title: 'Lorem ipsum dolor sit amet consectetur.',
-      date: '12/09/2021',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugit explicabo voluptate nesciunt dolorem, voluptatibus eveniet quod quaerat harum necessitatibus voluptatum fuga atque, suscipit asperiores ipsam, eligendi aspernatur quos? Perferendis obcaecati incidunt voluptatibus voluptas dignissimos laboriosam, debitis quaerat in ad iste optio, eum repellat. Iure nobis provident sit eius iusto.'
-    },
-    {
-      id: 3,
-      urlImage: 'https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/6192/live/61bb3530-f641-11ee-91c5-c92e09ae6ba7.jpg.webp',
-      title: 'Lorem ipsum dolor sit amet consectetur.',
-      date: '12/12/2024',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugit explicabo voluptate nesciunt dolorem, voluptatibus eveniet quod quaerat harum necessitatibus voluptatum fuga atque, suscipit asperiores ipsam, eligendi aspernatur quos? Perferendis obcaecati incidunt voluptatibus voluptas dignissimos laboriosam, debitis quaerat in ad iste optio, eum repellat. Iure nobis provident sit eius iusto.'
+  const getData = async () => {
+    try {
+      const response = await instance.get('/posts/user/b02ddfb9-25d7-4104-8d3e-b5fff308c6c4')
+      setData(response.data.posts)
+      setLoading(false)
+    } catch (error) {
+      console.error(error);
+      setError('Erro ao carregar os dados. Tente novamente mais tarde.');
+      setLoading(false);
     }
-  ]
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <div className='bg-slate-100 flex flex-col items-center px-5 py-10'>
       <div className='flex flex-col items-start w-full 2xl:w-[1500px] lg:px-32 md:px-12'>
         <h1 className='md:text-4xl text-2xl italic font-bold text-slate-900'>NOTÍCIAS</h1>
-        {data == undefined ? <p>Carregando...</p> : data.map((item, index) => (
-          <PostBlogHome key={index} id={item.id} urlImage={item.urlImage} title={item.title} date={item.date} desc={item.desc} />
+        {loading && <p className="text-center w-full">Carregando...</p>}
+        {error && <p className="text-center w-full text-red-500">{error}</p>}
+        {!loading && !error && data.map((item, index) => (
+          <PostBlog key={index} id={item.id} urlImage={item.imgUrl} title={item.title} date={formatDate(item.date)} desc={item.content} />
         ))}
       </div>
       <NavLink to='/noticias'>

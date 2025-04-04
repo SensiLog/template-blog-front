@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PostBlog from './PostBlog'
-import axios from '../hooks/instance.js'
-import { formatDate } from '../hooks/formatDate.js'
+import instance from '../hooks/instance.js'
+import { formatDate } from '../hooks/utils.js'
 
 function BlogNoticias() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null);
 
-
-
     const getData = async () => {
         try {
-            const response = await axios.get('/posts/ALL/CESARBRAZ')
-            setData(response.data)
+            const response = await instance.get('/posts/user/b02ddfb9-25d7-4104-8d3e-b5fff308c6c4')
+            setData(response.data.posts)
             setLoading(false)
         } catch (error) {
             console.error(error);

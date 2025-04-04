@@ -5,3 +5,7 @@ export const formatDate = (isoDate) => {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
 };
+
+export const formatTextWithLineBreaks = (text) => {
+    return text.replace(/\n/g, '<br />');
+};

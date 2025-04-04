@@ -5,7 +5,7 @@ function MaisNoticias(props) {
     return (
         <NavLink to={`/noticia/${props.id}`} className='w-full'>
             <div className='mt-6'>
-                <h1>{props.titulo}</h1>
+                <h1 className='font-semibold text-slate-800'>{props.title}</h1>
                 <div className='flex flex-row justify-between gap-4'>
                     <div className='w-[100px] h-[100px] flex-shrink-0'>
                         <img

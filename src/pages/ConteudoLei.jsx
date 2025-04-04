@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import DocLei from '../components/DocLei'
+import { formatTextWithLineBreaks } from '../hooks/utils.js';
 
 function ConteudoLei() {
     const textoExemplo = `
@@ -18,7 +19,7 @@ function ConteudoLei() {
         § 2º São considerados advogados aqueles legalmente habilitados e devidamente
         inscritos na Ordem dos Advogados do Brasil – OAB/RJ.
   `;
-  
+
     return (
         <div>
             <Header />
@@ -30,7 +31,7 @@ function ConteudoLei() {
                 <p className='2xl:w-[1500px] text-center'>Inclui na Lei nº 5.242, de 2011, a Venerável Irmandade de Santo Elesbão e Santa Ephigênia do Rio de Janeiro como de utilidade pública.</p>
                 <DocLei
                     autor='Vereador Fulano de Tal'
-                    conteudo={textoExemplo}
+                    conteudo={formatTextWithLineBreaks(textoExemplo)}
                 />
             </div>
             <Footer />
