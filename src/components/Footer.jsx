@@ -14,6 +14,7 @@ function Footer() {
                         <NavLink to='/lei/projetos'><li>Projetos de lei</li></NavLink>
                         <NavLink to='/noticias'><li>Notícias</li></NavLink>
                         <NavLink to='/contato'><li>Contato</li></NavLink>
+                        <NavLink to='/admin/login'><li>Admin</li></NavLink>
                     </ul>
                 </div>
                 <div className='md:w-1/5'>

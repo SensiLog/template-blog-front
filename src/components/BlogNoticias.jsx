@@ -10,7 +10,7 @@ function BlogNoticias() {
 
     const getData = async () => {
         try {
-            const response = await instance.get('/posts/user/b02ddfb9-25d7-4104-8d3e-b5fff308c6c4')
+            const response = await instance.get('/posts/user/88b32882-f5c0-49f0-8f5f-1c5e05f65108')
             setData(response.data.posts)
             setLoading(false)
         } catch (error) {
