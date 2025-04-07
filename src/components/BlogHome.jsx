@@ -11,7 +11,7 @@ function BlogHome() {
 
   const getData = async () => {
     try {
-      const response = await instance.get('/posts/user/88b32882-f5c0-49f0-8f5f-1c5e05f65108')
+      const response = await instance.get('/posts/user/a1d4072d-8237-463a-a0be-d5598342f87c')
       setData(response.data.posts)
       console.log(response.data.posts)
       setLoading(false)

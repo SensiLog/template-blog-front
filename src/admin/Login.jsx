@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import instance from '../hooks/instance';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -15,6 +16,7 @@ function Login() {
         try {
             const response = await instance.post('/auth/login', { email, password });
             console.log('Login successful:', response.data);
+            navigate('/admin/postnoticias');
         } catch (err) {
             console.error('Login failed:', err);
             setError('Invalid email or password');

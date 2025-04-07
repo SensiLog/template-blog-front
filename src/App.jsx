@@ -9,7 +9,7 @@ import ProjetosDeLei from './pages/ProjetosDeLei'
 import Noticia from "./pages/Noticia"
 import Login from "./admin/Login"
 import Register from "./admin/Register"
-
+import PostNoticias from "./admin/PostNoticias"
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
         { /* ADMIN */}
         <Route path='/admin/login' element={<Login />} />
         <Route path='/admin/register' element={<Register />} />
+        <Route path='/admin/postnoticias' element={<PostNoticias />} />
       </Routes>
     </>
   )
