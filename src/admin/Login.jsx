@@ -16,7 +16,7 @@ function Login() {
         try {
             const response = await instance.post('/auth/login', { email, password });
             console.log('Login successful:', response.data);
-            navigate('/admin/postnoticias');
+            navigate('/admin');
         } catch (err) {
             console.error('Login failed:', err);
             setError('Invalid email or password');

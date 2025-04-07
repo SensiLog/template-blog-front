@@ -10,6 +10,7 @@ import Noticia from "./pages/Noticia"
 import Login from "./admin/Login"
 import Register from "./admin/Register"
 import PostNoticias from "./admin/PostNoticias"
+import Menu from "./admin/Menu"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/lei/:id' element={<ConteudoLei />} />
 
         { /* ADMIN */}
+        <Route path='/admin' element={<Menu />} />
         <Route path='/admin/login' element={<Login />} />
         <Route path='/admin/register' element={<Register />} />
         <Route path='/admin/postnoticias' element={<PostNoticias />} />
