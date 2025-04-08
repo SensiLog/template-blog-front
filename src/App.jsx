@@ -11,6 +11,8 @@ import Login from "./admin/Login"
 import Register from "./admin/Register"
 import PostNoticias from "./admin/PostNoticias"
 import Menu from "./admin/Menu"
+import AdminNoticias from "./admin/AdminNoticias"
+import AdminLeis from "./admin/AdminLeis"
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path='/admin/login' element={<Login />} />
         <Route path='/admin/register' element={<Register />} />
         <Route path='/admin/postnoticias' element={<PostNoticias />} />
+        <Route path='/admin/posts' element={<AdminNoticias />} />
+        <Route path='/admin/leis' element={<AdminLeis />} />
       </Routes>
     </>
   )
