@@ -12,9 +12,9 @@ function LeisSancionadas() {
 
   const getSancionadas = async () => {
     try {
-      const response = await instance.get('/leis/user/a1d4072d-8237-463a-a0be-d5598342f87c')
-      setData(response.data)
-      setCounter(response.data.length)
+      const response = await instance.get('/leis/a1d4072d-8237-463a-a0be-d5598342f87c/sancionadas')
+      setData(response.data.leis)
+      setCounter(response.data.leis.length)
     } catch (error) {
       console.error(error)
     }

@@ -42,7 +42,7 @@ function PostNoticias() {
                 className='bg-slate-800 px-6 py-8 rounded shadow-md max-w-[550px] w-80 md:w-1/2 lg:w-1/3'
                 onSubmit={handleSubmit}
             >
-                <div className='flex flex-row items-center mb-4 gap-4'>
+                <div className='flex flex-col mb-4'>
                     <label>Titulo:</label>
                     <input
                         type="text"
@@ -53,7 +53,7 @@ function PostNoticias() {
                         className='bg-slate-100 text-slate-900 p-1 rounded w-full'
                     />
                 </div>
-                <div className='flex flex-row items-center mb-4 gap-4'>
+                <div className='flex flex-col mb-4'>
                     <label>Texto:</label>
                     <textarea
                         name="texto"
@@ -63,7 +63,7 @@ function PostNoticias() {
                         className='bg-slate-100 text-slate-900 p-1 rounded w-full'
                     ></textarea>
                 </div>
-                <div className='flex flex-row items-center mb-4 gap-4'>
+                <div className='flex flex-col mb-4'>
                     <label>Imagem:</label>
                     <input
                         type="file"

@@ -27,7 +27,7 @@ function Login() {
         <div className='flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white'>
             <h1 className='text-3xl mb-8 font-bold'>Login</h1>
             <form onSubmit={handleLogin} className='bg-slate-800 px-6 py-8 rounded shadow-md max-w-[550px] w-80 md:w-1/2 lg:w-1/3'>
-                <div className='flex flex-row items-center mb-4 gap-4'>
+                <div className='flex flex-col mb-4'>
                     <label>Email:</label>
                     <input
                         type="email"
@@ -37,7 +37,7 @@ function Login() {
                         className='bg-slate-100 text-slate-900 p-1 rounded w-full'
                     />
                 </div>
-                <div className='flex flex-row items-center mb-4 gap-4'>
+                <div className='flex flex-col mb-4'>
                     <label>Senha:</label>
                     <div className='relative w-full'>
                         <input
@@ -56,7 +56,6 @@ function Login() {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 <button type="submit" className='w-full bg-slate-700 text-xl font-medium rounded py-2 mt-4'>Login</button>
             </form>
-            <p className='mt-4'>Não tem uma conta? <Link to="/admin/register" className='text-slate-400 hover:text-slate-300'>Registrar</Link></p>
             <p className='mt-4'><Link to="/" className='hover:text-slate-300'>Voltar ao início</Link></p>
         </div>
     );

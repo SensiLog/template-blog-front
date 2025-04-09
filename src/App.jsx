@@ -8,11 +8,11 @@ import ConteudoLei from './pages/ConteudoLei'
 import ProjetosDeLei from './pages/ProjetosDeLei'
 import Noticia from "./pages/Noticia"
 import Login from "./admin/Login"
-import Register from "./admin/Register"
 import PostNoticias from "./admin/PostNoticias"
 import Menu from "./admin/Menu"
 import AdminNoticias from "./admin/AdminNoticias"
 import AdminLeis from "./admin/AdminLeis"
+import PostLeis from "./admin/PostLeis"
 
 function App() {
   return (
@@ -31,8 +31,8 @@ function App() {
         { /* ADMIN */}
         <Route path='/admin' element={<Menu />} />
         <Route path='/admin/login' element={<Login />} />
-        <Route path='/admin/register' element={<Register />} />
-        <Route path='/admin/postnoticias' element={<PostNoticias />} />
+        <Route path='/admin/posts/add' element={<PostNoticias />} />
+        <Route path='/admin/leis/add' element={<PostLeis />} />
         <Route path='/admin/posts' element={<AdminNoticias />} />
         <Route path='/admin/leis' element={<AdminLeis />} />
       </Routes>

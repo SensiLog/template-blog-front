@@ -10,8 +10,8 @@ function ProjetosDeLei() {
 
   const getProjetos = async () => {
     try {
-      const response = await instance.get('/leis/user/a1d4072d-8237-463a-a0be-d5598342f87c')
-      setData(response.data)
+      const response = await instance.get('/leis/a1d4072d-8237-463a-a0be-d5598342f87c/projeto')
+      setData(response.data.leis)
     } catch (error) {
       console.error(error)
     }
