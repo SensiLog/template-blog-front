@@ -1,32 +1,25 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import instance from '../hooks/instance.js'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Lei from '../components/Lei'
 
 function ProjetosDeLei() {
-  const data = [
-    {
-      id: 4,
-      lei: 'Lei 4',
-      ementa: 'Ementa da Lei 4',
-      conteudo: 'Conteúdo da Lei 4',
-      status: 'projeto'
-    },
-    {
-      id: 5,
-      lei: 'Lei 5',
-      ementa: 'Ementa da Lei 5',
-      conteudo: 'Conteúdo da Lei 5',
-      status: 'projeto'
-    },
-    {
-      id: 6,
-      lei: 'Lei 6',
-      ementa: 'Ementa da Lei 6',
-      conteudo: 'Conteúdo da Lei 6',
-      status: 'projeto'
+  const [data, setData] = useState([])
+
+  const getProjetos = async () => {
+    try {
+      const response = await instance.get('/leis/user/a1d4072d-8237-463a-a0be-d5598342f87c')
+      setData(response.data)
+    } catch (error) {
+      console.error(error)
     }
-  ]
+  }
+
+  useEffect(() => {
+    getProjetos()
+  }, [])
 
   return (
     <div className='flex items-center justify-center flex-col'>
@@ -40,7 +33,7 @@ function ProjetosDeLei() {
             return (
               <Lei
                 id={item.id}
-                lei={item.lei}
+                lei={item.numeroLei}
                 ementa={item.ementa}
               />
             )

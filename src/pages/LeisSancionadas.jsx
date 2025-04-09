@@ -1,34 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect, use } from 'react'
 import Header from '../components/Header'
 import Lei from '../components/Lei'
 import Footer from '../components/Footer'
+import instance from '../hooks/instance.js'
 
 function LeisSancionadas() {
-  const [counter, setCounter] = useState(13)
+  const [counter, setCounter] = useState(0)
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  const data = [
-    {
-      id: 1,
-      lei: 'Lei 1',
-      ementa: 'Ementa da Lei 1',
-      conteudo: 'Conteúdo da Lei 1',
-      status: 'sancionada'
-    },
-    {
-      id: 2,
-      lei: 'Lei 2',
-      ementa: 'Ementa da Lei 2',
-      conteudo: 'Conteúdo da Lei 2',
-      status: 'sancionada'
-    },
-    {
-      id: 3,
-      lei: 'Lei 3',
-      ementa: 'Ementa da Lei 3',
-      conteudo: 'Conteúdo da Lei 3',
-      status: 'sancionada'
+  const getSancionadas = async () => {
+    try {
+      const response = await instance.get('/leis/user/a1d4072d-8237-463a-a0be-d5598342f87c')
+      setData(response.data)
+      setCounter(response.data.length)
+    } catch (error) {
+      console.error(error)
     }
-  ]
+  }
+
+  useEffect(() => {
+    getSancionadas()
+  }, [])
 
   return (
     <div className='flex items-center justify-center flex-col'>
@@ -42,7 +36,7 @@ function LeisSancionadas() {
             return (
               <Lei
                 id={item.id}
-                lei={item.lei}
+                lei={item.numeroLei}
                 ementa={item.ementa}
               />
             )
