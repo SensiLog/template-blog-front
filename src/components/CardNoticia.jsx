@@ -6,10 +6,10 @@ function CardNoticia(props) {
             <div className='w-[300px] h-[200px] rounded overflow-hidden mb-4'>
                 <img className='w-full h-full object-cover' src={props.urlImage} alt="img-noticia" />
             </div>
-            <div className='flex flex-col items-start'>
-                <h1 className='font-semibold text-lg lg:text-xl truncate-custom'>{props.title}</h1>
+            <div className='flex flex-col items-start gap-1'>
+                <h1 className='font-semibold text-lg lg:text-xl truncate w-full'>{props.title}</h1>
                 <p className='text-xs md:text-sm text-slate-500'>{props.date}</p>
-                <p className='text-sm md:text-base truncate'>{props.desc}</p>
+                <p className='text-sm md:text-base truncate w-full'>{props.desc}</p>
             </div>
         </div>
     )

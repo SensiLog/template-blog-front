@@ -41,7 +41,7 @@ function AdminNoticias() {
 
   const handleEdit = async (id, updatedPost) => {
     try {
-      const response = await instance.put(`/posts/${id}`, updatedPost);
+      const response = await instance.patch(`/posts/${id}`, updatedPost);
       alert('Post atualizado com sucesso!');
       setData(data.map((post) => (post.id === id ? response.data : post))); // Atualiza o post na lista
       setIsEditModalOpen(false);
@@ -152,7 +152,9 @@ function AdminNoticias() {
                 const updatedPost = {
                   title: e.target.title.value,
                   content: e.target.content.value,
+                  userId: selectedPost.userId
                 };
+                console.log('Atualizando post:', updatedPost);
                 handleEdit(selectedPost.id, updatedPost);
               }}
             >
