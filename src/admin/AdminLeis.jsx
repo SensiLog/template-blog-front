@@ -55,7 +55,7 @@ function AdminLeis() {
   }, [])
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white'>
+    <div className='flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white px-4 py-6'>
       <h1 className='text-3xl mb-8 font-bold'>Gerenciar Leis</h1>
       <div className='flex flex-row items-center gap-8 mb-8'>
         <button onClick={() => navigate('/admin/leis/add')} className='cursor-pointer bg-slate-700 hover:bg-slate-600 transition p-3 rounded shadow-2xl text-white'>Adicionar nova lei</button>
