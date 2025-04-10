@@ -14,6 +14,9 @@
     overflow: hidden;
 }
 
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com opacidade */
+  }
 
 @layer base {
     body {
