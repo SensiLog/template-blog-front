@@ -16,7 +16,8 @@ function Noticia() {
   const getNoticias = async () => {
     try {
       const response = await instance.get('/posts/user/a1d4072d-8237-463a-a0be-d5598342f87c')
-      setData(response.data.posts)
+      const sortedPosts = response.data.posts.sort((a, b) => new Date(b.date) - new Date(a.date)); // Ordena pela data (mais nova para mais antiga)
+      setData(sortedPosts);
       setLoading(false)
     } catch (error) {
       console.error(error);
